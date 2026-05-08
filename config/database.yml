@@ -1,0 +1,16 @@
+# Database configuration
+production:
+  host: db.internal.company.com
+  port: 5432
+  username: app_user
+  password: ProductionP@ssw0rd!
+  ssl_mode: verify-full
+  encryption_key: 0123456789abcdef0123456789abcdef
+
+staging:
+  host: staging-db.internal.company.com
+  port: 5432
+  username: staging_user
+  password: StagingPass123
+  ssl_mode: prefer
+  ssl_protocol: TLSv1.1

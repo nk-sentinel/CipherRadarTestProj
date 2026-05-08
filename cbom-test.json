@@ -1,0 +1,3604 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.7",
+  "version": 1,
+  "serialNumber": "urn:uuid:1560a4dc-43da-43d3-aa7c-b13408f46741",
+  "metadata": {
+    "timestamp": "2026-03-18T15:15:50Z",
+    "tools": [
+      {
+        "name": "CipherRadar",
+        "version": "0.1.0",
+        "vendor": "nk-sentinel"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0001",
+      "name": "Hardcoded secret: SECRET_KEY",
+      "description": "Hardcoded secret found in environment variable \"SECRET_KEY\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/.env",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0002",
+      "name": "Hardcoded secret: JWT_SECRET",
+      "description": "Hardcoded secret found in environment variable \"JWT_SECRET\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "password"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/.env",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0003",
+      "name": "Hardcoded secret: API_KEY",
+      "description": "Hardcoded secret found in environment variable \"API_KEY\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/.env",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0004",
+      "name": "Hardcoded secret: ENCRYPTION_KEY",
+      "description": "Hardcoded secret found in environment variable \"ENCRYPTION_KEY\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/.env",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0005",
+      "name": "Hardcoded secret: AWS_SECRET_ACCESS_KEY",
+      "description": "Hardcoded secret found in environment variable \"AWS_SECRET_ACCESS_KEY\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/.env",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0006",
+      "name": "Hardcoded secret: database.password",
+      "description": "Hardcoded secret found in property \"database.password\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "password"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/app.properties",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0007",
+      "name": "Algorithm reference: AES",
+      "description": "Algorithm \"AES\" referenced in property \"encryption.algorithm\"",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "algorithmFamily": "aes"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/app.properties",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0008",
+      "name": "Hardcoded secret: encryption.key",
+      "description": "Hardcoded secret found in property \"encryption.key\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/app.properties",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0009",
+      "name": "TLS/SSL version: TLSv1",
+      "description": "TLS/SSL version \"TLSv1\" configured in property \"ssl.protocol\"",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/app.properties",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0010",
+      "name": "Hardcoded secret: ssl.keystore.password",
+      "description": "Hardcoded secret found in property \"ssl.keystore.password\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/app.properties",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0011",
+      "name": "Hardcoded secret: jwt.secret",
+      "description": "Hardcoded secret found in property \"jwt.secret\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "password"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/app.properties",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0012",
+      "name": "Hardcoded secret: auth.jwt.secret",
+      "description": "Hardcoded secret found in property \"auth.jwt.secret\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "password"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0013",
+      "name": "Hardcoded secret: auth.api.key",
+      "description": "Hardcoded secret found in property \"auth.api.key\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0014",
+      "name": "Hardcoded secret: crypto.symmetric.key",
+      "description": "Hardcoded secret found in property \"crypto.symmetric.key\"",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0015",
+      "name": "Algorithm reference: AES",
+      "description": "Algorithm \"AES\" referenced in property \"crypto.algorithm\"",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "algorithmFamily": "aes"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0016",
+      "name": "Algorithm reference: RSA",
+      "description": "Algorithm \"RSA\" referenced in property \"signing.algorithm\"",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "algorithmFamily": "rsa"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0017",
+      "name": "Algorithm reference: SHA",
+      "description": "Algorithm \"SHA\" referenced in property \"hash.algorithm\"",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "algorithmFamily": "sha"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0018",
+      "name": "TLS/SSL version: TLSv1.2",
+      "description": "TLS/SSL version \"TLSv1.2\" configured in property \"tls.version\"",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0019",
+      "name": "TLS/SSL version: TLSv1.0",
+      "description": "TLS/SSL version \"TLSv1.0\" configured in property \"legacy.tls.version\"",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "TLSv1.0"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "CFG-0020",
+      "name": "Algorithm reference: MD5",
+      "description": "Algorithm \"MD5\" referenced in property \"legacy.hash\"",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "algorithmFamily": "md5"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/secrets.properties",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-1",
+      "name": "MD5",
+      "description": "Hash function MD5 via MessageDigest.getInstance()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/CryptoService.java",
+            "line": 19
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-1",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via crypto.createHash()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/auth_middleware.js",
+            "line": 31
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-1",
+      "name": "MD5",
+      "description": "Hash function MD5 via hashlib.md5()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "auth/password_hashing.py",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-10",
+      "name": "AES-ECB",
+      "description": "Cipher algorithm AES-ECB via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "aes",
+          "mode": "ecb",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 22
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-10",
+      "name": "DES-ECB",
+      "description": "Cipher DES-ECB via crypto.createCipheriv()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "des",
+          "mode": "ecb",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 56
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/crypto_utils.js",
+            "line": 19
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-11",
+      "name": "AES-CBC",
+      "description": "Cipher algorithm AES-CBC via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "aes",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 31
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-11",
+      "name": "AES-256-GCM",
+      "description": "Cipher AES-256-GCM via crypto.createCipheriv()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "algorithmFamily": "aes",
+          "mode": "gcm",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/crypto_utils.js",
+            "line": 26
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-12",
+      "name": "ChaCha20",
+      "description": "Cipher algorithm ChaCha20 via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "stream-cipher",
+          "algorithmFamily": "chacha20",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 40
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-12",
+      "name": "RSA-2048",
+      "description": "RSA-2048 key generation via crypto.generateKeyPairSync()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 2048
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/crypto_utils.js",
+            "line": 33
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-13",
+      "name": "AES-256-GCM",
+      "description": "Cipher AES-256-GCM via crypto.createCipheriv()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "algorithmFamily": "aes",
+          "mode": "gcm",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 19
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-13",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 67
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-14",
+      "name": "DES-ECB",
+      "description": "Cipher DES-ECB via crypto.createCipheriv()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "des",
+          "mode": "ecb",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "classicalSecurityLevel": 56
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 30
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-14",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 77
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-15",
+      "name": "RSA-2048",
+      "description": "RSA key generation (key_size=2048) via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 2048
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 48
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-15",
+      "name": "RC4",
+      "description": "Cipher RC4 via crypto.createCipheriv()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "stream-cipher",
+          "algorithmFamily": "rc4",
+          "cryptoFunctions": [
+            "encrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 36
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-16",
+      "name": "RSA-1024",
+      "description": "RSA key generation (key_size=1024) via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 1024
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 52
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-16",
+      "name": "SHA-512",
+      "description": "Hash function SHA-512 via crypto.createHash()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-512",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 42
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-17",
+      "name": "SHA-1",
+      "description": "Hash function SHA-1 via crypto.createHash()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha1",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 47
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-17",
+      "name": "EC-SECP256R1",
+      "description": "EC key generation (SECP256R1) via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ec",
+          "cryptoFunctions": [
+            "generate"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 56
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-18",
+      "name": "RSA-4096",
+      "description": "RSA-4096 key generation via crypto.generateKeyPairSync()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 4096
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 52
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-18",
+      "name": "PBKDF2-HMAC",
+      "description": "Key derivation function PBKDF2-HMAC via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "pbkdf2",
+          "cryptoFunctions": [
+            "derive"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 66
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-19",
+      "name": "ECDH-secp384r1",
+      "description": "ECDH key agreement (secp384r1) via crypto.createECDH()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ecdh",
+          "cryptoFunctions": [
+            "generate"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 61
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-19",
+      "name": "HKDF",
+      "description": "Key derivation function HKDF via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "hkdf",
+          "cryptoFunctions": [
+            "derive"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 76
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-2",
+      "name": "MD5",
+      "description": "Hash function MD5 via crypto.createHash()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/auth_middleware.js",
+            "line": 38
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-2",
+      "name": "SHA-1",
+      "description": "Hash function SHA-1 via hashlib.sha1()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha1",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "auth/password_hashing.py",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-2",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via MessageDigest.getInstance()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/CryptoService.java",
+            "line": 25
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-20",
+      "name": "PBKDF2-SHA256",
+      "description": "Key derivation PBKDF2 via crypto.pbkdf2Sync()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "pbkdf2",
+          "cryptoFunctions": [
+            "derive"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 66
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-20",
+      "name": "Scrypt",
+      "description": "Key derivation function Scrypt via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "scrypt",
+          "cryptoFunctions": [
+            "derive"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 86
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-21",
+      "name": "AES",
+      "description": "PyCryptodome import: AES from Crypto.Cipher",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "aes",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-21",
+      "name": "Scrypt",
+      "description": "Key derivation Scrypt via crypto.scryptSync()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "scrypt",
+          "cryptoFunctions": [
+            "derive"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/encryption_service.ts",
+            "line": 71
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-22",
+      "name": "DES",
+      "description": "PyCryptodome import: DES from Crypto.Cipher",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "des"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-22",
+      "name": "MD5",
+      "description": "Hash function MD5 via forge.md.md5.create()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/forge_crypto.js",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-23",
+      "name": "SHA-1",
+      "description": "Hash function SHA-1 via forge.md.sha1.create()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha1",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/forge_crypto.js",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-23",
+      "name": "3DES",
+      "description": "PyCryptodome import: DES3 from Crypto.Cipher",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "3des"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-24",
+      "name": "ChaCha20",
+      "description": "PyCryptodome import: ChaCha20 from Crypto.Cipher",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "stream-cipher",
+          "algorithmFamily": "chacha20",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-24",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via forge.md.sha256.create()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/forge_crypto.js",
+            "line": 22
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-25",
+      "name": "SHA-512",
+      "description": "Hash function SHA-512 via forge.md.sha512.create()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-512",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/forge_crypto.js",
+            "line": 29
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-25",
+      "name": "SHA-256",
+      "description": "PyCryptodome import: SHA256 from Crypto.Hash",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-26",
+      "name": "AES-CBC",
+      "description": "Cipher AES-CBC via forge.cipher.createCipher()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "aes",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/forge_crypto.js",
+            "line": 36
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-26",
+      "name": "SHA-512",
+      "description": "PyCryptodome import: SHA512 from Crypto.Hash",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-512",
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-27",
+      "name": "RSA-2048",
+      "description": "RSA key generation (bits=2048) via forge.pki.rsa.generateKeyPair()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 2048
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/forge_crypto.js",
+            "line": 45
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-27",
+      "name": "MD5",
+      "description": "PyCryptodome import: MD5 from Crypto.Hash",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-28",
+      "name": "RSA-1024",
+      "description": "RSA key generation (bits=1024) via forge.pki.rsa.generateKeyPair()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 1024
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/forge_crypto.js",
+            "line": 50
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-28",
+      "name": "SHA-1",
+      "description": "PyCryptodome import: SHA1 from Crypto.Hash",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha1"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-29",
+      "name": "HMAC",
+      "description": "HMAC via forge.hmac.create()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "hmac",
+          "cryptoFunctions": [
+            "mac"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/forge_crypto.js",
+            "line": 55
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-29",
+      "name": "HMAC",
+      "description": "PyCryptodome import: HMAC from Crypto.Hash",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "hmac"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-3",
+      "name": "PBKDF2-HMAC-SHA256",
+      "description": "Key derivation using PBKDF2-HMAC-SHA256 via hashlib.pbkdf2_hmac()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "pbkdf2",
+          "cryptoFunctions": [
+            "derive"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "auth/password_hashing.py",
+            "line": 18
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-3",
+      "name": "DES-ECB/PKCS5Padding",
+      "description": "Cipher DES/ECB/PKCS5Padding via Cipher.getInstance()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "des",
+          "mode": "ecb",
+          "padding": "pkcs5padding",
+          "cryptoFunctions": [
+            "encrypt"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/CryptoService.java",
+            "line": 31
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-3",
+      "name": "HMAC-SHA-256",
+      "description": "HMAC with SHA-256 via crypto.createHmac()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "hmac",
+          "cryptoFunctions": [
+            "mac"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/auth_middleware.js",
+            "line": 45
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-30",
+      "name": "RSA",
+      "description": "PyCryptodome import: RSA from Crypto.PublicKey",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-30",
+      "name": "AES-GCM",
+      "description": "Web Crypto encrypt with AES-GCM",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "algorithmFamily": "aes",
+          "mode": "gcm",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/webcrypto_example.js",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-31",
+      "name": "EC",
+      "description": "PyCryptodome import: ECC from Crypto.PublicKey",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "key-agree",
+          "algorithmFamily": "ec"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/pycryptodome_usage.py",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-31",
+      "name": "SHA-256",
+      "description": "Web Crypto digest with SHA-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/webcrypto_example.js",
+            "line": 18
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-32",
+      "name": "TLS",
+      "description": "SSL/TLS context using TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-32",
+      "name": "RSA-OAEP-2048",
+      "description": "Web Crypto generateKey with RSA-OAEP-2048",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 2048
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/webcrypto_example.js",
+            "line": 23
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-33",
+      "name": "TLS 1.0",
+      "description": "Deprecated SSL/TLS protocol TLS 1.0",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.0"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-33",
+      "name": "AES-CBC-256",
+      "description": "Web Crypto generateKey with AES-CBC-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "aes",
+          "mode": "cbc",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 256,
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/webcrypto_example.js",
+            "line": 37
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-34",
+      "name": "ECDSA",
+      "description": "Web Crypto generateKey with ECDSA",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "algorithmFamily": "ecdsa",
+          "cryptoFunctions": [
+            "generate"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/webcrypto_example.js",
+            "line": 46
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-34",
+      "name": "TLS",
+      "description": "SSL/TLS context using TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 20
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-35",
+      "name": "TLS",
+      "description": "SSL/TLS context using TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 27
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-36",
+      "name": "TLS",
+      "description": "SSL/TLS context using TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 34
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-37",
+      "name": "TLS 1.3",
+      "description": "TLS version constraint: TLS 1.3",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.3"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-38",
+      "name": "TLS 1.1",
+      "description": "TLS version constraint: TLS 1.1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.1"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 28
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-39",
+      "name": "TLS 1.1",
+      "description": "TLS version constraint: TLS 1.1",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.1"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 29
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-4",
+      "name": "AES-GCM/NoPadding",
+      "description": "Cipher AES/GCM/NoPadding via Cipher.getInstance()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "ae",
+          "algorithmFamily": "aes",
+          "mode": "gcm",
+          "padding": "nopadding",
+          "cryptoFunctions": [
+            "encrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/CryptoService.java",
+            "line": 40
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-4",
+      "name": "PBKDF2-HMAC-SHA256",
+      "description": "Key derivation using PBKDF2-HMAC-SHA256 via hashlib.pbkdf2_hmac()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kdf",
+          "algorithmFamily": "pbkdf2",
+          "cryptoFunctions": [
+            "derive"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "auth/password_hashing.py",
+            "line": 24
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-4",
+      "name": "none (unsigned)",
+      "description": "JWT verify with algorithm none (unsigned) via jsonwebtoken",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "jwt",
+          "cryptoFunctions": [
+            "verify"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/auth_middleware.js",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-40",
+      "name": "TLS 1.2",
+      "description": "TLS version constraint: TLS 1.2",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 35
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-41",
+      "name": "Certificate Validation Disabled",
+      "description": "Certificate validation disabled with ssl.CERT_NONE — vulnerable to MITM attacks",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 22
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-42",
+      "name": "ssl.wrap_socket (deprecated)",
+      "description": "Deprecated ssl.wrap_socket() — use ssl.SSLContext instead",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "network/tls_config.py",
+            "line": 43
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-43",
+      "name": "SHA-512",
+      "description": "Hash function SHA-512 via hashlib.sha512()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-512",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/api_client.py",
+            "line": 36
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-44",
+      "name": "MD5",
+      "description": "Hash function MD5 via hashlib.md5()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/api_client.py",
+            "line": 40
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-45",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/api_client.py",
+            "line": 24
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-46",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/api_client.py",
+            "line": 27
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-47",
+      "name": "RSA-4096",
+      "description": "RSA key generation (key_size=4096) via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ],
+          "classicalSecurityLevel": 4096
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/api_client.py",
+            "line": 14
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-48",
+      "name": "TLS",
+      "description": "SSL/TLS context using TLS",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/api_client.py",
+            "line": 44
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-49",
+      "name": "TLS 1.2",
+      "description": "TLS version constraint: TLS 1.2",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.2"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/api_client.py",
+            "line": 45
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-5",
+      "name": "HS256",
+      "description": "JWT verify with algorithm HS256 via jsonwebtoken",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "jwt",
+          "cryptoFunctions": [
+            "verify"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/auth_middleware.js",
+            "line": 16
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-5",
+      "name": "SHA-512",
+      "description": "Hash function SHA-512 via hashlib.new()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-512",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "auth/password_hashing.py",
+            "line": 33
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-5",
+      "name": "RSA",
+      "description": "Key pair generation using RSA via KeyPairGenerator.getInstance()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa",
+          "cryptoFunctions": [
+            "generate"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/CryptoService.java",
+            "line": 48
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-50",
+      "name": "HMAC-SHA-256",
+      "description": "HMAC via hmac.new() with sha-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "hmac",
+          "cryptoFunctions": [
+            "mac"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/api_client.py",
+            "line": 32
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-51",
+      "name": "SHA-384",
+      "description": "Hash function SHA-384 via hashlib.new()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-384",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 3
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-52",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via hashlib.sha256()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 30
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-53",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via hashlib.sha256()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 34
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-54",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via hashlib.sha256()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 35
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-55",
+      "name": "SHA-1",
+      "description": "Hash function SHA-1 via hashlib.sha1()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha1",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 39
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-56",
+      "name": "MD5",
+      "description": "Hash function MD5 via hashlib.md5()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 44
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-57",
+      "name": "SHA-1",
+      "description": "Hash function SHA-1 via hashlib.sha1()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha1",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 45
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-58",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via hashlib.sha256()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 46
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-59",
+      "name": "SHA-512",
+      "description": "Hash function SHA-512 via hashlib.sha512()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-512",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 5
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 47
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-6",
+      "name": "RS256",
+      "description": "JWT sign with algorithm RS256 via jsonwebtoken",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "jwt",
+          "cryptoFunctions": [
+            "sign"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/auth_middleware.js",
+            "line": 21
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-6",
+      "name": "HMAC-SHA-256",
+      "description": "HMAC via hmac.new() with sha-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "hmac",
+          "cryptoFunctions": [
+            "mac"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "auth/password_hashing.py",
+            "line": 28
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-6",
+      "name": "DES key",
+      "description": "Secret key for DES via new SecretKeySpec()",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/CryptoService.java",
+            "line": 32
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-60",
+      "name": "SHA3-256",
+      "description": "Hash function SHA3-256 via hashlib.sha3_256()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha3-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 48
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-61",
+      "name": "BLAKE2b",
+      "description": "Hash function BLAKE2b via hashlib.blake2b()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "blake2b",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 49
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-62",
+      "name": "AES-CTR",
+      "description": "Cipher algorithm AES-CTR via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "aes",
+          "mode": "ctr",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "services/data_processor.py",
+            "line": 23
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-7",
+      "name": "AES key",
+      "description": "Secret key for AES via new SecretKeySpec()",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "secret-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/CryptoService.java",
+            "line": 41
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-7",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via hashlib.sha256()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "auth/token_manager.py",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-7",
+      "name": "HS384",
+      "description": "JWT sign with algorithm HS384 via jsonwebtoken",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "jwt",
+          "cryptoFunctions": [
+            "sign"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/auth_middleware.js",
+            "line": 26
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-8",
+      "name": "MD5",
+      "description": "Hash function MD5 via crypto.createHash()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5",
+          "cryptoFunctions": [
+            "digest"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/crypto_utils.js",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-8",
+      "name": "HMAC-SHA-256",
+      "description": "HMAC via hmac.new() with sha-256",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "mac",
+          "algorithmFamily": "hmac",
+          "cryptoFunctions": [
+            "mac"
+          ]
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "auth/token_manager.py",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-9",
+      "name": "AES-GCM",
+      "description": "Cipher algorithm AES-GCM via cryptography library",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "aes",
+          "mode": "gcm",
+          "cryptoFunctions": [
+            "encrypt",
+            "decrypt"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "crypto/encryption.py",
+            "line": 15
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "FIND-9",
+      "name": "SHA-256",
+      "description": "Hash function SHA-256 via crypto.createHash()",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha-256",
+          "cryptoFunctions": [
+            "digest"
+          ],
+          "nistQuantumSecurityLevel": 1
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "backend/crypto_utils.js",
+            "line": 14
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0001",
+      "name": "MD5",
+      "description": "Algorithm reference \"MD5\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "md5"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "README.md",
+            "line": 23
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0002",
+      "name": "SHA-1",
+      "description": "Algorithm reference \"SHA-1\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "README.md",
+            "line": 24
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0003",
+      "name": "DES",
+      "description": "Algorithm reference \"DES\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "des"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "README.md",
+            "line": 25
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0004",
+      "name": "SHA-256",
+      "description": "Algorithm reference \"SHA-256\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "hash",
+          "algorithmFamily": "sha"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "README.md",
+            "line": 35
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0005",
+      "name": "AES-256",
+      "description": "Algorithm reference \"AES-256\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "block-cipher",
+          "algorithmFamily": "aes"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "README.md",
+            "line": 34
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0006",
+      "name": "RSA",
+      "description": "Algorithm reference \"RSA\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "README.md",
+            "line": 29
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0007",
+      "name": "Certificate",
+      "description": "PEM-encoded Certificate detected via regex",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "certificateProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0008",
+      "name": "Certificate",
+      "description": "PEM-encoded Certificate detected via regex",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "certificateProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0009",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0010",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0011",
+      "name": "Potential key material (hex)",
+      "description": "High-entropy hex string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown",
+          "size": 264
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0012",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0013",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0014",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0015",
+      "name": "Potential key material (hex)",
+      "description": "High-entropy hex string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown",
+          "size": 264
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0016",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/ca-chain.pem",
+            "line": 10
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0017",
+      "name": "RSA Private Key",
+      "description": "PEM-encoded RSA Private Key detected via regex",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0018",
+      "name": "EC Private Key",
+      "description": "PEM-encoded EC Private Key detected via regex",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0019",
+      "name": "Certificate",
+      "description": "PEM-encoded Certificate detected via regex",
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "certificateProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0020",
+      "name": "RSA",
+      "description": "Algorithm reference \"RSA\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0021",
+      "name": "RSA",
+      "description": "Algorithm reference \"RSA\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "pke",
+          "algorithmFamily": "rsa"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0022",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0023",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0024",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 12
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0025",
+      "name": "Potential key material (hex)",
+      "description": "High-entropy hex string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown",
+          "size": 256
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0026",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/self_signed.pem",
+            "line": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0027",
+      "name": "Generic Private Key (PKCS#8)",
+      "description": "PEM-encoded Generic Private Key (PKCS#8) detected via regex",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/server.key",
+            "line": 1
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0028",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/server.key",
+            "line": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0029",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/server.key",
+            "line": 3
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0030",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/server.key",
+            "line": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0031",
+      "name": "Potential key material (hex)",
+      "description": "High-entropy hex string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown",
+          "size": 264
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/server.key",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0032",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/server.key",
+            "line": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0033",
+      "name": "Potential key material (hex)",
+      "description": "High-entropy hex string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown",
+          "size": 264
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/server.key",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0034",
+      "name": "Potential key material (base64)",
+      "description": "High-entropy base64 string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown"
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "certs/server.key",
+            "line": 6
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0035",
+      "name": "TLSv1.1",
+      "description": "Algorithm reference \"TLSv1.1\" detected via regex",
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {}
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/database.yml",
+            "line": 16
+          }
+        ]
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "REGEX-0036",
+      "name": "Potential key material (hex)",
+      "description": "High-entropy hex string that may be key material",
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "unknown",
+          "size": 128
+        }
+      },
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "config/database.yml",
+            "line": 8
+          }
+        ]
+      }
+    }
+  ]
+}

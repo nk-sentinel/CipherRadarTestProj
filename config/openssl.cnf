@@ -1,0 +1,59 @@
+# OpenSSL Configuration for CipherRadar Benchmark
+
+[default]
+name = default
+domain_suffix = example.com
+
+[req]
+# EXPECTED: SHA-256 | - | 2048 | info | quantum-safe
+default_bits = 2048
+default_md = sha256
+distinguished_name = req_distinguished_name
+prompt = no
+
+[req_distinguished_name]
+C = US
+ST = California
+L = San Francisco
+O = CipherRadar Test
+CN = example.com
+
+[ca]
+default_ca = CA_default
+
+[CA_default]
+# EXPECTED: SHA-256 | - | - | info | quantum-safe
+default_md = sha256
+default_days = 365
+copy_extensions = copy
+preserve = no
+policy = policy_strict
+
+[policy_strict]
+countryName = match
+stateOrProvinceName = match
+organizationName = match
+
+# BAD: weak section using MD5 and small key
+[weak_ca]
+# EXPECTED: MD5 | - | 1024 | critical | broken
+default_md = md5
+default_bits = 1024
+
+# BAD: another weak configuration
+[legacy_compat]
+# EXPECTED: SHA-1 | - | 1024 | high | quantum-vulnerable
+default_md = sha1
+default_bits = 1024
+
+[v3_ca]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+
+[v3_intermediate_ca]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true, pathlen:0
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign

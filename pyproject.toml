@@ -1,0 +1,10 @@
+[project]
+name = "benchmark-corpus"
+version = "1.0.0"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+crypto = [
+    "cryptography>=42.0",
+    "pycryptodome>=3.20",
+]

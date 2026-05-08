@@ -1,0 +1,191 @@
+{
+  "matching_algorithm": "3-pass (exact \u2192 name \u2192 family)",
+  "cradar_components": 625,
+  "cbomkit_components": 163,
+  "timing": {
+    "cradar_ms": 1448,
+    "cbomkit_ms": 17258
+  },
+  "head_to_head": {
+    "java": {
+      "cr": 156,
+      "cb": 118,
+      "both": 105,
+      "cr_only": 51,
+      "cb_only": 13
+    },
+    "python": {
+      "cr": 194,
+      "cb": 83,
+      "both": 64,
+      "cr_only": 130,
+      "cb_only": 19
+    }
+  },
+  "cr_fn_details": {
+    "java": [
+      {
+        "name": "SHA1",
+        "file": "JcaTlsTests.java",
+        "line": 60
+      },
+      {
+        "name": "HMAC-SHA256",
+        "file": "JcaKeyGenTests.java",
+        "line": 104
+      },
+      {
+        "name": "HMAC-SHA256",
+        "file": "JcaKeyGenTests.java",
+        "line": 110
+      },
+      {
+        "name": "RSA",
+        "file": "JcaTlsTests.java",
+        "line": 60
+      },
+      {
+        "name": "MD5",
+        "file": "JcaMacSignTests.java",
+        "line": 35
+      },
+      {
+        "name": "SHA512",
+        "file": "JcaMacSignTests.java",
+        "line": 28
+      },
+      {
+        "name": "3DES",
+        "file": "JcaCipherTests.java",
+        "line": 65
+      },
+      {
+        "name": "SHA384",
+        "file": "JcaMacSignTests.java",
+        "line": 21
+      },
+      {
+        "name": "TLS",
+        "file": "JcaTlsTests.java",
+        "line": 30
+      },
+      {
+        "name": "TLS",
+        "file": "JcaTlsTests.java",
+        "line": 60
+      },
+      {
+        "name": "MGF1",
+        "file": "JcaCipherTests.java",
+        "line": 92
+      },
+      {
+        "name": "SHA256",
+        "file": "JcaKeyGenTests.java",
+        "line": 69
+      },
+      {
+        "name": "SHA256",
+        "file": "JcaMacSignTests.java",
+        "line": 14
+      }
+    ],
+    "python": [
+      {
+        "name": "HMAC-SHA256",
+        "file": "pyca_mac.py",
+        "line": 9
+      },
+      {
+        "name": "HMAC-SHA256",
+        "file": "pyca_fernet.py",
+        "line": 6
+      },
+      {
+        "name": "Ed25519",
+        "file": "encryption.py",
+        "line": 60
+      },
+      {
+        "name": "Ed25519",
+        "file": "pyca_asymmetric.py",
+        "line": 35
+      },
+      {
+        "name": "AES-CMAC",
+        "file": "pyca_mac.py",
+        "line": 39
+      },
+      {
+        "name": "x25519",
+        "file": "pyca_asymmetric.py",
+        "line": 43
+      },
+      {
+        "name": "HMAC-SHA1",
+        "file": "pyca_mac.py",
+        "line": 33
+      },
+      {
+        "name": "SHAKE256",
+        "file": "pyca_asymmetric.py",
+        "line": 39
+      },
+      {
+        "name": "HMAC-SHA512",
+        "file": "pyca_mac.py",
+        "line": 21
+      },
+      {
+        "name": "Ed448",
+        "file": "pyca_asymmetric.py",
+        "line": 39
+      },
+      {
+        "name": "AES128-CBC-PKCS7",
+        "file": "pyca_fernet.py",
+        "line": 6
+      },
+      {
+        "name": "x448",
+        "file": "pyca_asymmetric.py",
+        "line": 47
+      },
+      {
+        "name": "3DES-CMAC",
+        "file": "pyca_mac.py",
+        "line": 45
+      },
+      {
+        "name": "Poly1305",
+        "file": "pyca_mac.py",
+        "line": 51
+      },
+      {
+        "name": "SHA512",
+        "file": "encryption.py",
+        "line": 60
+      },
+      {
+        "name": "SHA512",
+        "file": "pyca_asymmetric.py",
+        "line": 35
+      },
+      {
+        "name": "HMAC-MD5",
+        "file": "pyca_mac.py",
+        "line": 27
+      },
+      {
+        "name": "HMAC-SHA384",
+        "file": "pyca_mac.py",
+        "line": 15
+      },
+      {
+        "name": "SHA256",
+        "file": "pyca_fernet.py",
+        "line": 6
+      }
+    ]
+  }
+}

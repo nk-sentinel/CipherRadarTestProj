@@ -1,0 +1,81 @@
+{
+  "issues": [
+    {
+      "engineId": "cipherradar",
+      "ruleId": "cbom-weak-hash",
+      "severity": "CRITICAL",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "MD5 is a deprecated hash algorithm — use SHA-256, SHA-3, or BLAKE3",
+        "filePath": "crypto/encryption.py",
+        "textRange": { "startLine": 1 }
+      }
+    },
+    {
+      "engineId": "cipherradar",
+      "ruleId": "cbom-weak-cipher",
+      "severity": "CRITICAL",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "DES is a deprecated cipher — replace with AES-256-GCM or ChaCha20-Poly1305",
+        "filePath": "crypto/encryption.py",
+        "textRange": { "startLine": 5 }
+      }
+    },
+    {
+      "engineId": "cipherradar",
+      "ruleId": "cbom-quantum-vulnerable",
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "primaryLocation": {
+        "message": "RSA-2048 is vulnerable to quantum attacks — plan migration to ML-KEM / ML-DSA",
+        "filePath": "auth/token_manager.py",
+        "textRange": { "startLine": 1 }
+      }
+    },
+    {
+      "engineId": "cipherradar",
+      "ruleId": "cbom-hardcoded-key",
+      "severity": "BLOCKER",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "Hardcoded AES key detected — load from a secure key management system",
+        "filePath": "backend/CryptoService.java",
+        "textRange": { "startLine": 1 }
+      }
+    },
+    {
+      "engineId": "cipherradar",
+      "ruleId": "cbom-insecure-random",
+      "severity": "CRITICAL",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "Math.random() used in cryptographic context — use crypto.getRandomValues()",
+        "filePath": "backend/crypto_utils.js",
+        "textRange": { "startLine": 1 }
+      }
+    },
+    {
+      "engineId": "cipherradar",
+      "ruleId": "cbom-weak-key-size",
+      "severity": "MAJOR",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "RSA key size 1024 bits is insufficient — use at least RSA-2048",
+        "filePath": "network/tls_config.py",
+        "textRange": { "startLine": 1 }
+      }
+    },
+    {
+      "engineId": "cipherradar",
+      "ruleId": "cbom-crypto-detected",
+      "severity": "INFO",
+      "type": "CODE_SMELL",
+      "primaryLocation": {
+        "message": "TLS 1.3 configuration detected — TLS_AES_256_GCM_SHA384 cipher suite",
+        "filePath": "network/tls_config.py",
+        "textRange": { "startLine": 10 }
+      }
+    }
+  ]
+}
