@@ -1,6 +1,13 @@
 package benchmark;
 
 import org.bouncycastle.crypto.signers.*;
+import org.bouncycastle.crypto.AsymmetricCipherKeyPair;
+import org.bouncycastle.crypto.engines.ElGamalEngine;
+import org.bouncycastle.crypto.generators.ElGamalKeyPairGenerator;
+import org.bouncycastle.crypto.params.ElGamalKeyGenerationParameters;
+import org.bouncycastle.crypto.params.ElGamalParameters;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 
 public class BouncyCastleSigners {
 
@@ -33,4 +40,17 @@ public class BouncyCastleSigners {
 
     // EXPECTED: Ed25519ctx | - | 256 | low | quantum-vulnerable
     public void ed25519ctx() { new Ed25519ctxSigner(new byte[0]); }
+
+    // EXPECTED: ElGamal | - | 2048 | medium | quantum-vulnerable
+    // ElGamal — discrete-log-based asymmetric encryption
+    public void elgamal() {
+        BigInteger p = BigInteger.ONE;
+        BigInteger g = BigInteger.ONE;
+        ElGamalParameters params = new ElGamalParameters(p, g);
+        ElGamalKeyGenerationParameters kgp = new ElGamalKeyGenerationParameters(new SecureRandom(), params);
+        ElGamalKeyPairGenerator kpg = new ElGamalKeyPairGenerator();
+        kpg.init(kgp);
+        AsymmetricCipherKeyPair pair = kpg.generateKeyPair();
+        ElGamalEngine engine = new ElGamalEngine();
+    }
 }
