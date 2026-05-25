@@ -7,9 +7,11 @@ Compiled binaries that exercise cradar's Pass 3 (YARA-X) binary scanner. Each fi
 | Fixture | What it embeds | YARA rule(s) it should trigger |
 |---|---|---|
 | `dist/embedded-cert` | A test X.509 PEM certificate as a string literal | `embedded_pem_certificate` |
-| `dist/embedded-rsa-key` | A test RSA private key in PEM form | `embedded_pem_rsa_private` |
+| `dist/embedded-rsa-key` | A test PKCS#1 RSA private key in PEM form | `embedded_pem_rsa_private` |
+| `dist/embedded-ec-key` | A test SEC1 EC private key in PEM form | `embedded_pem_ec_private` |
+| `dist/embedded-pkcs8-key` | A test PKCS#8 (unwrapped) private key in PEM form | `embedded_pkcs8_private` |
 | `dist/openssl-versions` | OpenSSL version strings (1.0.2u, 1.1.1w, 3.0.12, 3.1.4) + libsodium / BoringSSL / mbed TLS markers | `openssl_version_1_0`, `openssl_version_1_1`, `openssl_version_3_0`, `openssl_version_3_1`, `libsodium_signature`, `boringssl_magic`, `mbedtls_signature` |
-| `dist/crypto-constants` | AES forward S-box + Rcon, MD5 IV, SHA-256 IV + first round constants | `aes_sbox_forward`, `aes_rcon`, `md5_constants`, `sha256_constants` |
+| `dist/crypto-constants` | AES forward + inverse S-box, AES Rcon, DES S-box, MD5 IV, SHA-1 IV, SHA-256 IV + first round constants | `aes_sbox_forward`, `aes_sbox_inverse`, `aes_rcon`, `des_sbox`, `md5_constants`, `sha1_constants`, `sha256_constants` |
 
 All four are tiny (~15-20 KB stripped). All built on Ubuntu 24.04 / gcc 13 / x86_64 ELF.
 

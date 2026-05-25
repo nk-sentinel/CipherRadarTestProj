@@ -67,20 +67,46 @@ static const uint32_t sha256_k[4] __attribute__((used)) = {
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5,
 };
 
+/* AES inverse S-box (FIPS 197 Table 6) — first 16 bytes.
+ * Used by AES decryption / key schedule of certain modes. */
+static const uint8_t aes_invsbox[16] __attribute__((used)) = {
+    0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38,
+    0xbf, 0x40, 0xa3, 0x9e, 0x81, 0xf3, 0xd7, 0xfb,
+};
+
+/* DES S-box 1, first row (FIPS 46-3). Canonical row-major layout used in
+ * libcrypto-style implementations. The 16-byte row is enough to trigger
+ * a high-confidence DES detection without dragging in all 8 S-boxes. */
+static const uint8_t des_sbox1_row0[16] __attribute__((used)) = {
+    0x0e, 0x04, 0x0d, 0x01, 0x02, 0x0f, 0x0b, 0x08,
+    0x03, 0x0a, 0x06, 0x0c, 0x05, 0x09, 0x00, 0x07,
+};
+
+/* SHA-1 initial state (FIPS 180-4): H0..H4. Stored as uint32_t — on x86
+ * this lands in .rodata in little-endian byte order, which is exactly
+ * what the SHA-1 IV rule's $iv_le alternative matches. */
+static const uint32_t sha1_h0[5] __attribute__((used)) = {
+    0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476, 0xc3d2e1f0,
+};
+
 /* Stash every constant array's address in a volatile sink. Without this,
  * gcc -O2 unrolls the loops in main() AND embeds the small constants
- * (Rcon, MD5 IV, SHA-256 IV/K) as immediate operands rather than reading
- * from .rodata — the tables vanish from the binary, defeating the
- * binary-pattern detection these fixtures exist to exercise. Taking the
- * address through a volatile pointer forces the arrays to be allocated
- * in .rodata as contiguous tables. */
+ * (Rcon, MD5 IV, SHA-256 IV/K, SHA-1 IV, AES inverse S-box, DES S-box)
+ * as immediate operands rather than reading from .rodata — the tables
+ * vanish from the binary, defeating the binary-pattern detection these
+ * fixtures exist to exercise. Taking the address through a volatile
+ * pointer forces the arrays to be allocated in .rodata as contiguous
+ * tables. */
 static void keep_tables_alive(void) {
-    volatile const void *sink[5];
+    volatile const void *sink[8];
     sink[0] = aes_sbox;
     sink[1] = aes_rcon;
     sink[2] = md5_iv;
     sink[3] = sha256_h0;
     sink[4] = sha256_k;
+    sink[5] = aes_invsbox;
+    sink[6] = des_sbox1_row0;
+    sink[7] = sha1_h0;
     (void)sink;
 }
 
@@ -107,7 +133,18 @@ int main(void) {
     uint32_t sha256_k_xor = 0;
     for (int i = 0; i < 4; i++) sha256_k_xor ^= sha256_k[i];
 
-    printf("sbox_xor=%02x rcon_xor=%02x md5_xor=%08x sha256_h_xor=%08x sha256_k_xor=%08x\n",
-           sbox_xor, rcon_xor, md5_xor, sha256_h_xor, sha256_k_xor);
+    uint8_t invsbox_xor = 0;
+    for (int i = 0; i < 16; i++) invsbox_xor ^= aes_invsbox[i];
+
+    uint8_t des_xor = 0;
+    for (int i = 0; i < 16; i++) des_xor ^= des_sbox1_row0[i];
+
+    uint32_t sha1_xor = 0;
+    for (int i = 0; i < 5; i++) sha1_xor ^= sha1_h0[i];
+
+    printf("sbox_xor=%02x rcon_xor=%02x md5_xor=%08x sha256_h_xor=%08x sha256_k_xor=%08x "
+           "invsbox_xor=%02x des_xor=%02x sha1_xor=%08x\n",
+           sbox_xor, rcon_xor, md5_xor, sha256_h_xor, sha256_k_xor,
+           invsbox_xor, des_xor, sha1_xor);
     return 0;
 }
