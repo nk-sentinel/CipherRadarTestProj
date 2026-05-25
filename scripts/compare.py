@@ -41,6 +41,12 @@ ALGO_CANONICAL = {
     "X25519": "X25519", "X448": "X448",
     "DSA": "DSA",
     "POLY1305": "POLY1305", "HMAC-POLY1305": "POLY1305",
+    # CycloneDX cryptoProperties.algorithmProperties.primitive canonical
+    # forms cradar emits for some pyca/cryptography rules. Mapping these
+    # back to the matching names cbomkit uses lets the comparison
+    # canonicalize without a special-case name-pattern strip.
+    "CURVE25519": "X25519",
+    "CURVE448":   "X448",
     "FERNET": "FERNET", "MULTIFERNET": "FERNET",
     "TLSV1.3": "TLSV13", "TLSV1.2": "TLSV12", "TLSV1.1": "TLSV11",
     "TLSV1.0": "TLSV10", "TLSV1": "TLSV10", "TLS": "TLS",
@@ -82,7 +88,15 @@ def normalize_name(name):
 
 
 def extract_findings(bom, tool):
-    """Extract findings from a CycloneDX BOM."""
+    """Extract findings from a CycloneDX BOM.
+
+    For matching, prefer the canonical `algorithmProperties.primitive` over
+    the rule-derived `name` field when both are present and the name doesn't
+    normalize on its own. Cradar's name field often carries the rule id
+    (e.g. "pyca-ed25519") which is informative for humans but doesn't
+    round-trip through ALGO_CANONICAL. The primitive carries the canonical
+    form ("ED25519") which the canonicalizer DOES recognize.
+    """
     findings = []
     for comp in bom.get("components", []):
         name = comp.get("name", "")
@@ -90,17 +104,28 @@ def extract_findings(bom, tool):
             continue
         crypto = comp.get("cryptoProperties", {})
         algo = crypto.get("algorithmProperties", {})
+        primitive = algo.get("primitive", "")
+        norm_name = normalize_name(name)
+        norm_primitive = normalize_name(primitive)
+        # Prefer primitive when name doesn't canonicalize but primitive does.
+        # Heuristic: name resolved through the fallback (first 8 chars of
+        # cleaned string) when the primitive is empty AND clean alpha-num
+        # doesn't match ALGO_CANONICAL; in that case use the primitive.
+        chosen = norm_name
+        if norm_primitive and norm_primitive in ALGO_CANONICAL.values():
+            if norm_name not in ALGO_CANONICAL.values():
+                chosen = norm_primitive
         for occ in comp.get("evidence", {}).get("occurrences", []):
             loc = occ.get("location", occ.get("fileName", ""))
             findings.append({
                 "tool": tool,
                 "name": name,
-                "name_normalized": normalize_name(name),
+                "name_normalized": chosen,
                 "file": Path(loc).name,
                 "filepath": loc,
                 "line": occ.get("line", 0),
                 "asset_type": crypto.get("assetType", ""),
-                "primitive": algo.get("primitive", ""),
+                "primitive": primitive,
             })
     return findings
 
