@@ -1,0 +1,48 @@
+# Kubernetes crypto benchmark fixture for CipherRadar recall measurement.
+# Scanner models: kubernetes.io/tls secrets, secretName in Ingress TLS,
+# ssl-ciphers (weak cipher set), ssl-protocols (TLSv1/1.0/1.1).
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: secure-ingress
+  annotations:
+    # --- Weak cipher RC4-SHA in ssl-ciphers annotation (modelled) ---
+    # EXPECTED: Weak cipher in K8s annotation: RC4-SHA | | | high | broken
+    # --- Weak cipher DES-CBC3-SHA in ssl-ciphers annotation (modelled) ---
+    # EXPECTED: Weak cipher in K8s annotation: DES-CBC3-SHA | | | high | broken
+    nginx.ingress.kubernetes.io/ssl-ciphers: "RC4-SHA:DES-CBC3-SHA:ECDHE-RSA-AES256-GCM-SHA384"
+    # --- Weak protocol TLSv1 in ssl-protocols annotation (modelled) ---
+    # EXPECTED: Weak TLS protocol in K8s annotation: TLSv1 | tls | 1.0 | high | quantum-vulnerable
+    # --- Weak protocol TLSv1.1 in ssl-protocols annotation (modelled) ---
+    # EXPECTED: Weak TLS protocol in K8s annotation: TLSv1.1 | tls | 1.1 | high | quantum-vulnerable
+    nginx.ingress.kubernetes.io/ssl-protocols: "TLSv1 TLSv1.1 TLSv1.2 TLSv1.3"
+spec:
+  tls:
+    - hosts:
+        - secure.example.com
+      # --- Ingress TLS secret reference (modelled secretName) ---
+      # EXPECTED: Ingress TLS secret: secure-tls | tls | | info | quantum-vulnerable
+      secretName: secure-tls
+  rules:
+    - host: secure.example.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: secure-service
+                port:
+                  number: 443
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secure-tls
+# --- Kubernetes TLS secret type (modelled kubernetes.io/tls) ---
+# EXPECTED: Kubernetes TLS secret | | | info | quantum-vulnerable
+type: kubernetes.io/tls
+data:
+  tls.crt: LS0tLS1CRUdJTi0tLS0t
+  tls.key: LS0tLS1CRUdJTi0tLS0t
