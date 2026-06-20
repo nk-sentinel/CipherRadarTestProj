@@ -1,0 +1,9 @@
+packages:
+  pointycastle:
+    dependency: "direct main"
+    source: hosted
+    version: "3.9.1"
+  crypto:
+    dependency: "direct main"
+    source: hosted
+    version: "3.0.3"
