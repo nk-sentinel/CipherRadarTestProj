@@ -78,10 +78,20 @@ presence of each category is the invariant.
   (`certs/keystore.jks`, `certs/identity.p12`)
 - BKS: presence-only (no pure-Go parser; ADR-041). cradar never downloads wordlists.
 
-### Key size from method-chaining
-- Java `getInstance(...)` + `initialize(N)` / `init(N)` (`java/KeySizeChaining.java`)
-- C# `rsa.KeySize = N` property (`csharp/KeySizeProperty.cs`)
-- e.g. RSA-2048, RSA-3072 with `classicalSecurityLevel` set
+### Key size from method-chaining / declarations
+- Java `getInstance(...)` + `initialize(N)` / `init(N)` (`java/KeySizeChaining.java`),
+  incl. two-arg `initialize(N, SecureRandom)` (`java/KeySizeTwoArg.java`)
+- Kotlin `initialize(N)` / two-arg `initialize(N, SecureRandom())` and the
+  `(random, N)` ordering (`kotlin/KeySizeTwoArg.kt`)
+- C# `rsa.KeySize = N` property (`csharp/KeySizeProperty.cs`) and `Aes` `KeySize`
+  (`csharp/AesKeySize.cs`)
+- PHP `openssl_pkey_new(['private_key_bits' => N])` (`php/KeySizeRsa.php`)
+- Ruby `OpenSSL::PKey::DSA.new(N)` (`ruby/dsa_keysize.rb`)
+- C++ OpenSSL `RSA_generate_key_ex(rsa, N, …)` + `AES_set_encrypt_key(key, N, …)`
+  where bits is arg 1 (`cpp/keysize_openssl.cpp`)
+- EC/Edwards/Montgomery curves backfill key size from the curve name (post-scan
+  `keysize.Enrich`): P-256/384/521, secp256k1, Ed25519/X25519 → 256, X448 → 448
+- e.g. RSA-2048/3072/4096, DSA-2048, AES-192/256 with `classicalSecurityLevel` set
 
 ### Config / secrets / IaC
 - `nginx.conf` TLS certs + ciphers, `openssl.cnf`, `java.security` disabled algos
