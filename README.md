@@ -16,7 +16,8 @@ it in sync with the fixtures.
 | `auth/`, `crypto/`, `network/`, `services/`, `python/` | Python — hashing, KDFs, pyca/cryptography, PyCryptodome, stdlib `ssl`, ElGamal, asymmetric, MACs, Fernet |
 | `backend/` | Mixed JS / TS / Java — node-forge, WebCrypto, JWT, JCA |
 | `javascript/` | JS — node `crypto`, WebCrypto, JWT, `package.json` + `package-lock.json` (library/purl + SRI-suppression) |
-| `java/` | Java — full JCA + BouncyCastle (digests, engines, MAC/KDF, signers, PQC ML-KEM/ML-DSA), TLS, key-size chaining |
+| `java/` | Java — full JCA + BouncyCastle (digests, engines, MAC/KDF, signers, PQC ML-KEM/ML-DSA), TLS, key-size chaining; expanded third-party library imports (`CryptoLibraryImports.java`: JJWT, Tink, Spring Security Crypto, Commons Codec, Nimbus) |
+| `java/gradle-catalog-app/` | Gradle version-catalog enrichment — `build.gradle.kts` + `gradle/libs.versions.toml` with `libs.*` aliases resolved (incl. `version.ref`) to concrete Maven coordinates + purls |
 | `kotlin/`, `csharp/` | Kotlin + C# — JCA-style chaining and the C# `KeySize` property idiom |
 | `go/`, `rust/`, `php/`, `ruby/`, `dart/`, `swift/`, `cpp/` | Per-language crypto inventory + lockfiles (`go.mod`, `Cargo.lock`, `Gemfile.lock`, `pubspec.lock`) |
 | `certs/` | Certificates: PEM chain, self-signed PEM, DER, PKCS#7, JKS, PKCS#12, BKS, raw private key |
@@ -51,6 +52,17 @@ presence of each category is the invariant.
 - Resolved package + version + `purl` for: npm (`node-forge`, `jsonwebtoken`,
   `bcrypt`), PyPI (`cryptography`, `pycryptodome`), Maven (`bcprov-jdk18on`),
   Cargo (`openssl`, `ring`, `rustls`)
+- **Maven `<dependencyManagement>` fallback**: `io.jsonwebtoken:jjwt-api` /
+  `jjwt-impl` are declared in root `pom.xml` `<dependencies>` *without* a version
+  and must resolve to `@0.12.6` via the managed-version block. Tink
+  (`com.google.crypto.tink:tink@1.13.0`) resolves from a directly pinned dep.
+- **Gradle version catalog** (`java/gradle-catalog-app/`): `libs.*` aliases must
+  resolve through `gradle/libs.versions.toml` (including `version.ref`
+  indirection) to `pkg:maven/io.jsonwebtoken/jjwt-api@0.12.6` and
+  `pkg:maven/com.google.crypto.tink/tink@1.13.0`.
+- Detected-but-unresolved libraries (imported in source, absent from any
+  manifest — e.g. Spring Security Crypto, Commons Codec, Nimbus JOSE+JWT) carry
+  the library name + `purl` **without a version** (graceful fallback).
 - Stdlib crypto (hashlib, node:crypto, JCA, WebCrypto) carries the library name
   but **no purl** (by design)
 

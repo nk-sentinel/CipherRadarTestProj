@@ -12,7 +12,26 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jjwt.version>0.12.6</jjwt.version>
     </properties>
+
+    <!-- dependencyManagement pins versions that the <dependencies> entries below
+         deliberately omit, so enrichment must apply the managed-version fallback
+         (jjwt-api / jjwt-impl resolve to ${jjwt.version} via this block). -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-api</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt-impl</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -29,6 +48,21 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-ext-jdk18on</artifactId>
             <version>1.78</version>
+        </dependency>
+        <!-- No <version> here: must be inherited from <dependencyManagement>. -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+        </dependency>
+        <!-- Directly pinned: exercises the expanded Google Tink mapping. -->
+        <dependency>
+            <groupId>com.google.crypto.tink</groupId>
+            <artifactId>tink</artifactId>
+            <version>1.13.0</version>
         </dependency>
     </dependencies>
 </project>

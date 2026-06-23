@@ -1,0 +1,13 @@
+# Gradle version catalog fixture. Enrichment must resolve the `libs.<alias>`
+# references in build.gradle.kts to concrete coordinates + versions, including
+# version.ref indirection through the [versions] table.
+[versions]
+jjwt = "0.12.6"
+tink = "1.13.0"
+bouncycastle = "1.78"
+
+[libraries]
+jjwt-api = { module = "io.jsonwebtoken:jjwt-api", version.ref = "jjwt" }
+jjwt-impl = { module = "io.jsonwebtoken:jjwt-impl", version.ref = "jjwt" }
+google-tink = { module = "com.google.crypto.tink:tink", version.ref = "tink" }
+bouncycastle-bcprov = { module = "org.bouncycastle:bcprov-jdk18on", version.ref = "bouncycastle" }
